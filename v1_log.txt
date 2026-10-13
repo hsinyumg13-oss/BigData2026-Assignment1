@@ -1,0 +1,81 @@
+7.8s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.8s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.8s 3 0.00s - to python to disable frozen modules.
+7.8s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.4s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.4s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.4s 7 0.00s - to python to disable frozen modules.
+8.4s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+40.4s 9 Python/PyTorch ready
+40.4s 10 PyTorch: 2.11.0+cu128
+40.4s 11 CUDA available: True
+40.4s 12 GPU count: 2
+40.4s 13 0 Tesla T4
+40.4s 14 1 Tesla T4
+40.4s 15 Effective batch: 128
+40.4s 16 MetaMathQA train limit: 25000
+40.4s 17 Evaluation tasks: ['gsm8k', 'math']
+40.4s 18 Results: /kaggle/working/Assignment1
+40.7s 19 Hugging Face login: OK
+44.4s 20 Tokenizer: meta-llama/Llama-3.2-1B
+44.4s 21 EOS: 128001 PAD: 128001
+65.3s 22 
+65.3s 23 TRAIN: Dataset({
+65.3s 24 features: ['instruction', 'output', 'source_type'],
+65.3s 25 num_rows: 25000
+65.3s 26 })
+65.3s 27 train example: {'instruction': "Gracie and Joe are choosing numbers on the complex plane. Joe chooses the point $1+2i$. Gracie chooses $-1+i$. How far apart are Gracie and Joe's points?", 'output': "The distance between two points $(x_1,y_1)$ and $(x_2,y_2)$ in the complex plane is given by the formula $\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$.\nIn this case, Joe's point is $(1,2)$ and Gracie's point is $(-1,1)$.\nSo the distance between their points is $\\sqrt{((-1)-(1))^2+((1)-(2))^2}=\\sqrt{(-2)^2+(-1)^2}=\\sqrt{4+1}=\\sqrt{5}$.\nTherefore, Gracie and Joe's points are $\\boxed{\\sqrt{5}}$ units apart.\nThe answer is: \\sqrt{5}", 'source_type': 'MATH_AnsAug'}
+65.3s 28 
+65.3s 29 EVAL gsm8k: Dataset({
+65.3s 30 features: ['instruction', 'type', 'gold_answer'],
+65.3s 31 num_rows: 1319
+65.3s 32 })
+65.3s 33 test example: {'instruction': "Below is an instruction that describes a task. Write a response that appropriately completes the request.\n\n### Instruction:\nJanet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\n\n### Response: Let's think step by step.", 'type': 'gsm8k', 'gold_answer': '18'}
+65.3s 34 
+65.3s 35 EVAL math: Dataset({
+65.3s 36 features: ['instruction', 'type', 'gold_answer'],
+65.3s 37 num_rows: 5000
+65.3s 38 })
+65.3s 39 test example: {'instruction': "Below is an instruction that describes a task. Write a response that appropriately completes the request.\n\n### Instruction:\nFind the matrix $\\mathbf{M}$ such that\n\\[\\mathbf{M} \\begin{pmatrix} 1 & -2 \\\\ 1 & 4 \\end{pmatrix} = \\begin{pmatrix} 6 & 0 \\\\ 0 & 6 \\end{pmatrix}.\\]\n\n### Response: Let's think step by step.", 'type': 'math', 'gold_answer': '\\begin{pmatrix} 4 & 2 \\\\ -1 & 1 \\end{pmatrix}'}
+96.3s 40 MetaMathQA train rows: 25000 usable: 24975
+96.5s 41 Training corpus: meta-math/MetaMathQA
+96.5s 42 Evaluation tasks: ['gsm8k', 'math']
+96.5s 43 PiSSA runs: 1
+96.5s 44 {'rank': 16, 'component': 'default'}
+96.8s 45 
+96.8s 46 ================================================================================
+96.8s 47 FRESH BASELINE: evaluate GSM8K + MATH
+96.8s 48 ================================================================================
+125.3s 49 [transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+125.3s 50 
+125.3s 51 [transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+2963.0s 52 
+2963.0s 53 ================================================================================
+2963.0s 54 metamath_pissa_default_r16
+2963.0s 55 ================================================================================
+2966.4s 56 [  1/112] model.layers.0.self_attn.q_proj
+2966.6s 57 [  2/112] model.layers.0.self_attn.k_proj
+2966.8s 58 [  3/112] model.layers.0.self_attn.v_proj
+3109.0s 59 [112/112] model.layers.15.mlp.down_proj
+3109.0s 60 Trainable parameters: 11,272,192 (0.904%)
+3109.6s 61 Training metamath: 24975 examples, 3122 micro-batches, 196 updates, 6 warmup updates.
+3111.7s 62 /usr/local/lib/python3.13/dist-packages/torch/autograd/function.py:596: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+3111.7s 63 return super().apply(*args, **kwargs)  # type: ignore[misc]
+3111.7s 64 
+3111.7s 65 /usr/local/lib/python3.13/dist-packages/torch/autograd/function.py:596: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+3111.7s 66 return super().apply(*args, **kwargs)  # type: ignore[misc]
+6962.3s 67 Training time: 64.21 minutes
+6962.3s 68 Training history saved: /kaggle/working/Assignment1/metamath_pissa_default_r16_training_history.csv
+6962.3s 69 PiSSA adapter saved: /kaggle/working/Assignment1/metamath_pissa_default_r16_adapter.pt
+6962.3s 70 Merged 112 PiSSA layers into standard nn.Linear layers.
+6962.4s 71 PiSSA merge time: 0.16s
+6962.4s 72 Evaluating merged model on GSM8K + MATH...
+9355.5s 73 Merged full model saved: /kaggle/working/Assignment1/metamath_pissa_default_r16_full_model
+9361.7s 74 /usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+9361.7s 75 cells[i][c] = re.sub('\\\\\|', '|', cell)
+9361.9s 76 /usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+9361.9s 77 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+9362.7s 78 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+9362.8s 79 [NbConvertApp] Writing 459621 bytes to __notebook__.ipynb
+9365.2s 80 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+9366.0s 81 [NbConvertApp] Writing 796796 bytes to __results__.html
