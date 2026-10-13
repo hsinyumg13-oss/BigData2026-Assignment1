@@ -12,6 +12,7 @@ This repository fine-tunes `meta-llama/Llama-3.2-1B` on MetaMathQA with PiSSA-st
 | `finetune_q4.ipynb` | SVD analysis of `q_proj` in layers 0, 7, 15 for Q4 |
 | `q3_bar_chart.ipynb` | Bar chart of Q3 accuracy |
 | `v1.csv`, `v2.csv`, `v3.csv` | `benchmark_results.csv` of the three Kaggle runs |
+| `v1_log.txt`, `v2_log.txt` | Kaggle logs of V1 and V2, including the training time for Q2 |
 
 ## Modifications to the provided code
 
